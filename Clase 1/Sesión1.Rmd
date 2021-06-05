@@ -1,0 +1,111 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Matrices
+
+```{r}
+new_hope <- c(460.998,314.4)
+empire_strike <- c(2980.475, 247.900)
+return_jedi <- c(309.306,165.8)
+
+box_office <- c(new_hope, empire_strike, return_jedi)
+box_office
+
+star_wars_matrix <- matrix(box_office,byrow=TRUE,nrow=3)
+star_wars_matrix
+
+region <- c("US", "non-US")
+titles <- c("A new hope", "the empire strikers", "return of jedi")
+
+colnames (star_wars_matrix) <- region
+rownames(star_wars_matrix) <- titles
+star_wars_matrix
+```
+RowSums()
+
+```{r}
+worldwide_vector <- rowSums(star_wars_matrix)
+worldwide_vector 
+
+all_wars_variable <- cbind(star_wars_matrix, worldwide_vector)
+all_wars_variable
+
+worldwide_col <- colSums(all_wars_variable)
+worldwide_col
+
+all_wars_variable <- cbind(all_wars_variable, worldwide_col)
+all_wars_variable
+
+```
+
+Factores
+
+```{r}
+
+sex_vector <- c("male","female")
+
+factor_sex_vector <- factor(sex_vector)
+factor_sex_vector
+
+
+temperature_vector <- c("high", "low", "high", "low", "medium")
+factor_temprature_vector <- factor(temperature_vector, order= TRUE, levels= c("Low", "Medium","High"))
+
+factor_temprature_vector
+
+```
+Factor Levels
+
+```{r}
+
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+
+factor_survey_vector
+
+levels (factor_survey_vector) <- c("Female", "Male")
+factor_survey_vector
+
+```
+
+Summarizing a factor
+
+
+```{r}
+summary(survey_vector)
+summary(factor_survey_vector)
+```
+
+
+```{r}
+male <- factor_survey_vector[1]
+male
+
+female <- factor_survey_vector[2]
+female
+
+speed_vector <- c("Medium","slow", "slow", "medium","fast")
+factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels=c("slow","medium","fast"))
+factor_speed_vector
+
+
+```
+
+
+```{r}
+da2 <- factor_speed_vector[2]
+da3 <- factor_speed_vector[3]
+
+da2
+da3
+
+da3 > da2
+
+```
+
+
+
+
+

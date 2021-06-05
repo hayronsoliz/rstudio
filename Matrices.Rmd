@@ -24,5 +24,4 @@ rownames (star_wars_matrix) <- titles
 
 star_wars_matrix
 
-
   ```
