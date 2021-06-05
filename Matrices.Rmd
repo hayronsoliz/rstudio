@@ -1,0 +1,28 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Matrices
+
+```{r}
+new_hope <- c(460.998,314.4)
+empire_strike <- c(2980.475, 247.900)
+return_jedi <- c(309.306,165.8)
+
+box_office <- c(new_hope, empire_strike, return_jedi)
+box_office
+
+star_wars_matrix <- matrix(box_office,byrow=TRUE,nrow=3)
+star_wars_matrix
+
+region <- c("US", "non-US")
+titles <- c("A new hope", "the empire strikers", "return of jedi")
+
+colnames (star_wars_matrix) <- region
+rownames (star_wars_matrix) <- titles
+
+star_wars_matrix
+
+
+  ```
