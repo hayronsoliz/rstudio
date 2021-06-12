@@ -215,73 +215,130 @@ pre code {
 
 
 <!-- rnb-text-begin -->
-<p>crear dataframes</p>
+<p>R INTERMEDIATE</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZSA8LSBjKFwiTWVyY3VyeVwiLCBcIlZlbnVzXCIsIFwiRWFydGhcIiwgXCJNYXJzXCIsIFwiSnVwaXRlclwiLCBcIlNhdHVyblwiLCBcIlVyYW51c1wiLCBcIk5lcHR1bmVcIilcbnR5cGUgPC0gYyhcIlRlcnJlc3RyaWFsIHBsYW5ldFwiLCBcIlRlcnJlc3RyaWFsIHBsYW5ldFwiLCBcIlRlcnJlc3RyaWFsIHBsYW5ldFwiLCBcbiAgICAgICAgICBcIlRlcnJlc3RyaWFsIHBsYW5ldFwiLCBcIkdhcyBnaWFudFwiLCBcIkdhcyBnaWFudFwiLCBcIkdhcyBnaWFudFwiLCBcIkdhcyBnaWFudFwiKVxuZGlhbWV0ZXIgPC0gYygwLjM4MiwgMC45NDksIDEsIDAuNTMyLCAxMS4yMDksIDkuNDQ5LCA0LjAwNywgMy44ODMpXG5yb3RhdGlvbiA8LSBjKDU4LjY0LCAtMjQzLjAyLCAxLCAxLjAzLCAwLjQxLCAwLjQzLCAtMC43MiwgMC42NylcbnJpbmdzIDwtIGMoRkFMU0UsIEZBTFNFLCBGQUxTRSwgRkFMU0UsIFRSVUUsIFRSVUUsIFRSVUUsIFRSVUUpXG5wbGFuZXRzX2RmIDwtIGRhdGEuZnJhbWUobmFtZSwgdHlwZSwgZGlhbWV0ZXIsIHJvdGF0aW9uLCByaW5ncylcbnBsYW5ldHNfZGZcblxucGxhbmV0c19kZlsxLDNdXG5cbnJpbmdzX3ZlY3RvciA8LSBwbGFuZXRzX2RmJHJpbmdzXG5yaW5nc192ZWN0b3JcblxucGxhbmV0c19kZltyaW5nc192ZWN0b3IsXVxuXG5gYGAifQ== -->
-<pre class="r"><code>name &lt;- c(&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Mars&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;)
-type &lt;- c(&quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;, &quot;Terrestrial planet&quot;, 
-          &quot;Terrestrial planet&quot;, &quot;Gas giant&quot;, &quot;Gas giant&quot;, &quot;Gas giant&quot;, &quot;Gas giant&quot;)
-diameter &lt;- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
-rotation &lt;- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
-rings &lt;- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
-planets_df &lt;- data.frame(name, type, diameter, rotation, rings)
-planets_df
-
-planets_df[1,3]
-
-rings_vector &lt;- planets_df$rings
-rings_vector
-
-planets_df[rings_vector,]
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMyA9PSAoMiArIDEpXG5cImludGVybWVkaWF0ZVwiICE9IFwiclwiXG5UUlVFICE9IEZBTFNFXG5cIlJjaGl0ZWN0XCIgIT0gXCJyY2hpdGVjdFwiXG5cbmBgYCJ9 -->
+<pre class="r"><code>3 == (2 + 1)
+&quot;intermediate&quot; != &quot;r&quot;
+TRUE != FALSE
+&quot;Rchitect&quot; != &quot;rchitect&quot;
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>sorting</p>
+<p>greater and less than</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8LSBjKDEwMCwxMCwxMDAwKVxub3JkZXIoYSlcblxuYiA8LSBhW29yZGVyKGEpXVxuYlxuXG5wb3NpdGlvbnMgPC0gb3JkZXIocGxhbmV0c19kZiRkaWFtZXRlcilcbnBvc2l0aW9uc1xuXG5wbGFuZXRzX2RmW3Bvc2l0aW9ucyxdXG5cbmBgYCJ9 -->
-<pre class="r"><code>a &lt;- c(100,10,1000)
-order(a)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuLTYgKiA1ICsgMiA+PSAtMTAgKyAxXG5cblwicmFpbmluZ1wiIDw9IFwidGFibGVcIlxuXG5UUlVFID4gRkFMU0VcblxuXCJAXCIgPD0gXCI/XCJcblxuYGBgIn0= -->
+<pre class="r"><code>-6 * 5 + 2 &gt;= -10 + 1
 
-b &lt;- a[order(a)]
-b
+&quot;raining&quot; &lt;= &quot;table&quot;
 
-positions &lt;- order(planets_df$diameter)
-positions
+TRUE &gt; FALSE
 
-planets_df[positions,]
+&quot;@&quot; &lt;= &quot;?&quot;
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>listas</p>
+<p>Compare vectors</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXlfdmVjdG9yIDwtIDE6MTBcbm15X21hdHJpeCA8LSBtYXRyaXgoMTo5LCBuY29sPTMpXG5teV9kZiA8LSBwbGFuZXRzX2RmWzE6NCxdXG5cbm15X2xpc3QgXG5cbmBgYCJ9 -->
-<pre class="r"><code>my_vector &lt;- 1:10
-my_matrix &lt;- matrix(1:9, ncol=3)
-my_df &lt;- planets_df[1:4,]
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5saW5rZWRpbiA8LSBjKDE2LDksMTMsNSwyLDE3LDE0KVxuZmFjZWJvb2sgPC0gYygxNyw3LDUsMTYsOCwxMywxNClcblxubGlua2VkaW4gPiAxNVxuZmFjZWJvb2sgPiAxNVxuXG5saW5rZWRpbiA+IGZhY2Vib29rXG5cbnZpZXdzIDwtIG1hdHJpeCAoYyhsaW5rZWRpbiwgZmFjZWJvb2spLCBucm93PTIgLCBieXJvdz1UUlVFKVxudmlld3Ncblxudmlld3MgPT0gMTNcblxuXG5gYGAifQ== -->
+<pre class="r"><code>
+linkedin &lt;- c(16,9,13,5,2,17,14)
+facebook &lt;- c(17,7,5,16,8,13,14)
 
-my_list 
+linkedin &gt; 15
+facebook &gt; 15
+
+linkedin &gt; facebook
+
+views &lt;- matrix (c(linkedin, facebook), nrow=2 , byrow=TRUE)
+views
+
+views == 13
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Crear un named list</p>
+<p>Operaciones lógicas</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubmFtZXMobXlfbGlzdCkgPC0gdihcIlZlY3RvclwiLCBcIm1hdHJpeFwiLCBcImRhdGEgZnJhbWVcIilcbm15X2xpc3RcblxuXG5gYGAifQ== -->
-<pre class="r"><code>names(my_list) &lt;- v(&quot;Vector&quot;, &quot;matrix&quot;, &quot;data frame&quot;)
-my_list
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5saW5rZWRpbiA8PSAxMCAmIGZhY2Vib29rID09IDEzXG52aWV3cyA+IDExICYgdmlld3MgPDVcblxuYGBgIn0= -->
+<pre class="r"><code>
+linkedin &lt;= 10 &amp; facebook == 13
+views &gt; 11 &amp; views &lt;5
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>the if statement</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWVkaXVtIDwtIFwiZmFjZWJvb2tcIlxubnVtX3ZpZXdzIDwtIDE0XG5cbmlmKG1lZGl1bSA9PSBcImxpbmtlZGluXCIpe1xuICBwcmludCAoXCJTaG93aW5nIExJbmtlZGluIGluZm9ybWF0aW9uXCIpICBcbn0gZWxzZSB7XG4gIHByaW50IChcInVua25vdyBtZWRpdW1cIilcbn1cblxuaWYobnVtX3ZpZXdzID4gMTUpe1xuICBwcmludChcInlvdSBhcmUgcG9wdWxhclwiKVxufWVsc2Uge1xuICBwcmludCAoXCJUcnkgdG8gYmUgbW9yZSB2aXNpYmxlIVwiKVxufVxuXG5cblxuYGBgIn0= -->
+<pre class="r"><code>medium &lt;- &quot;facebook&quot;
+num_views &lt;- 14
+
+if(medium == &quot;linkedin&quot;){
+  print (&quot;Showing LInkedin information&quot;)  
+} else {
+  print (&quot;unknow medium&quot;)
+}
+
+if(num_views &gt; 15){
+  print(&quot;you are popular&quot;)
+}else {
+  print (&quot;Try to be more visible!&quot;)
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>customize further: else if</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5pZihtZWRpdW0gPT1cImxpbmtlZGluXCIpe1xuICBwcmludChcIlNob3dpbmcgTGlua2VkaW4gaW5mb3JtYXRpb25cIilcbn0gZWxzZSBpZihtZWRpdW0gPT0gXCJmYWNlYm9va1wiKXtcbiAgcHJpbnQoXCJTaG93aW5nIGZhY2Vib29rIGluZm9ybWF0aW9uXCIpXG59IGVsc2V7XG4gICBwcmludCAoXCJUcnkgdG8gYmUgbW9yZSB2aXNpYmxlIVwiKVxufVxuXG5cblxuYGBgIn0= -->
+<pre class="r"><code>
+if(medium ==&quot;linkedin&quot;){
+  print(&quot;Showing Linkedin information&quot;)
+} else if(medium == &quot;facebook&quot;){
+  print(&quot;Showing facebook information&quot;)
+} else{
+   print (&quot;Try to be more visible!&quot;)
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>else if 2.0</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtYmVyIDwtIDExXG5cblxuaWYobnVtYmVyIDwgMTApe1xuICBpZihudW1iZXIgPCA1KXtcbiAgICByZXN1bHQgPC0gXCJleHRyYSBzbWFsbFwiXG4gIH1lbHNle1xuICAgIHJlc3VsdCA8LSBcInNtYWxsXCJcbiAgfVxufWVsc2UgaWYgKG51bWJlciA8IDEwMCl7XG4gIHJlc3VsdCA8LSBcIm1lZGl1bVwiXG59ZWxzZXtcbnJlc3VsdCA8LSBcImxhcmdlXCJcbn1cblxucHJpbnQocmVzdWx0KVxuXG5gYGAifQ== -->
+<pre class="r"><code>number &lt;- 11
+
+
+if(number &lt; 10){
+  if(number &lt; 5){
+    result &lt;- &quot;extra small&quot;
+  }else{
+    result &lt;- &quot;small&quot;
+  }
+}else if (number &lt; 100){
+  result &lt;- &quot;medium&quot;
+}else{
+result &lt;- &quot;large&quot;
+}
+
+print(result)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpjcmVhciBkYXRhZnJhbWVzDQoNCmBgYHtyfQ0KbmFtZSA8LSBjKCJNZXJjdXJ5IiwgIlZlbnVzIiwgIkVhcnRoIiwgIk1hcnMiLCAiSnVwaXRlciIsICJTYXR1cm4iLCAiVXJhbnVzIiwgIk5lcHR1bmUiKQ0KdHlwZSA8LSBjKCJUZXJyZXN0cmlhbCBwbGFuZXQiLCAiVGVycmVzdHJpYWwgcGxhbmV0IiwgIlRlcnJlc3RyaWFsIHBsYW5ldCIsIA0KICAgICAgICAgICJUZXJyZXN0cmlhbCBwbGFuZXQiLCAiR2FzIGdpYW50IiwgIkdhcyBnaWFudCIsICJHYXMgZ2lhbnQiLCAiR2FzIGdpYW50IikNCmRpYW1ldGVyIDwtIGMoMC4zODIsIDAuOTQ5LCAxLCAwLjUzMiwgMTEuMjA5LCA5LjQ0OSwgNC4wMDcsIDMuODgzKQ0Kcm90YXRpb24gPC0gYyg1OC42NCwgLTI0My4wMiwgMSwgMS4wMywgMC40MSwgMC40MywgLTAuNzIsIDAuNjcpDQpyaW5ncyA8LSBjKEZBTFNFLCBGQUxTRSwgRkFMU0UsIEZBTFNFLCBUUlVFLCBUUlVFLCBUUlVFLCBUUlVFKQ0KcGxhbmV0c19kZiA8LSBkYXRhLmZyYW1lKG5hbWUsIHR5cGUsIGRpYW1ldGVyLCByb3RhdGlvbiwgcmluZ3MpDQpwbGFuZXRzX2RmDQoNCnBsYW5ldHNfZGZbMSwzXQ0KDQpyaW5nc192ZWN0b3IgPC0gcGxhbmV0c19kZiRyaW5ncw0KcmluZ3NfdmVjdG9yDQoNCnBsYW5ldHNfZGZbcmluZ3NfdmVjdG9yLF0NCg0KYGBgDQoNCg0Kc29ydGluZw0KDQpgYGB7cn0NCmEgPC0gYygxMDAsMTAsMTAwMCkNCm9yZGVyKGEpDQoNCmIgPC0gYVtvcmRlcihhKV0NCmINCg0KcG9zaXRpb25zIDwtIG9yZGVyKHBsYW5ldHNfZGYkZGlhbWV0ZXIpDQpwb3NpdGlvbnMNCg0KcGxhbmV0c19kZltwb3NpdGlvbnMsXQ0KDQpgYGANCg0KbGlzdGFzDQoNCg0KYGBge3J9DQpteV92ZWN0b3IgPC0gMToxMA0KbXlfbWF0cml4IDwtIG1hdHJpeCgxOjksIG5jb2w9MykNCm15X2RmIDwtIHBsYW5ldHNfZGZbMTo0LF0NCg0KbXlfbGlzdCANCg0KYGBgDQoNCg0KQ3JlYXIgdW4gbmFtZWQgbGlzdA0KDQoNCmBgYHtyfQ0KbmFtZXMobXlfbGlzdCkgPC0gdigiVmVjdG9yIiwgIm1hdHJpeCIsICJkYXRhIGZyYW1lIikNCm15X2xpc3QNCg0KDQpgYGANCg0KDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpSIElOVEVSTUVESUFURQ0KDQpgYGB7cn0NCjMgPT0gKDIgKyAxKQ0KImludGVybWVkaWF0ZSIgIT0gInIiDQpUUlVFICE9IEZBTFNFDQoiUmNoaXRlY3QiICE9ICJyY2hpdGVjdCINCg0KYGBgDQoNCmdyZWF0ZXIgYW5kIGxlc3MgdGhhbg0KDQoNCmBgYHtyfQ0KLTYgKiA1ICsgMiA+PSAtMTAgKyAxDQoNCiJyYWluaW5nIiA8PSAidGFibGUiDQoNClRSVUUgPiBGQUxTRQ0KDQoiQCIgPD0gIj8iDQoNCmBgYA0KQ29tcGFyZSB2ZWN0b3JzDQoNCmBgYHtyfQ0KDQpsaW5rZWRpbiA8LSBjKDE2LDksMTMsNSwyLDE3LDE0KQ0KZmFjZWJvb2sgPC0gYygxNyw3LDUsMTYsOCwxMywxNCkNCg0KbGlua2VkaW4gPiAxNQ0KZmFjZWJvb2sgPiAxNQ0KDQpsaW5rZWRpbiA+IGZhY2Vib29rDQoNCnZpZXdzIDwtIG1hdHJpeCAoYyhsaW5rZWRpbiwgZmFjZWJvb2spLCBucm93PTIgLCBieXJvdz1UUlVFKQ0Kdmlld3MNCg0Kdmlld3MgPT0gMTMNCg0KDQpgYGANCk9wZXJhY2lvbmVzIGzDs2dpY2FzDQoNCmBgYHtyfQ0KDQpsaW5rZWRpbiA8PSAxMCAmIGZhY2Vib29rID09IDEzDQp2aWV3cyA+IDExICYgdmlld3MgPDUNCg0KYGBgDQoNCnRoZSBpZiBzdGF0ZW1lbnQNCg0KYGBge3J9DQptZWRpdW0gPC0gImZhY2Vib29rIg0KbnVtX3ZpZXdzIDwtIDE0DQoNCmlmKG1lZGl1bSA9PSAibGlua2VkaW4iKXsNCiAgcHJpbnQgKCJTaG93aW5nIExJbmtlZGluIGluZm9ybWF0aW9uIikgIA0KfSBlbHNlIHsNCiAgcHJpbnQgKCJ1bmtub3cgbWVkaXVtIikNCn0NCg0KaWYobnVtX3ZpZXdzID4gMTUpew0KICBwcmludCgieW91IGFyZSBwb3B1bGFyIikNCn1lbHNlIHsNCiAgcHJpbnQgKCJUcnkgdG8gYmUgbW9yZSB2aXNpYmxlISIpDQp9DQoNCg0KDQpgYGANCg0KDQpjdXN0b21pemUgZnVydGhlcjogZWxzZSBpZg0KDQoNCmBgYHtyfQ0KDQppZihtZWRpdW0gPT0ibGlua2VkaW4iKXsNCiAgcHJpbnQoIlNob3dpbmcgTGlua2VkaW4gaW5mb3JtYXRpb24iKQ0KfSBlbHNlIGlmKG1lZGl1bSA9PSAiZmFjZWJvb2siKXsNCiAgcHJpbnQoIlNob3dpbmcgZmFjZWJvb2sgaW5mb3JtYXRpb24iKQ0KfSBlbHNlew0KICAgcHJpbnQgKCJUcnkgdG8gYmUgbW9yZSB2aXNpYmxlISIpDQp9DQoNCg0KDQpgYGANCg0KZWxzZSBpZiAyLjANCg0KYGBge3J9DQpudW1iZXIgPC0gMTENCg0KDQppZihudW1iZXIgPCAxMCl7DQogIGlmKG51bWJlciA8IDUpew0KICAgIHJlc3VsdCA8LSAiZXh0cmEgc21hbGwiDQogIH1lbHNlew0KICAgIHJlc3VsdCA8LSAic21hbGwiDQogIH0NCn1lbHNlIGlmIChudW1iZXIgPCAxMDApew0KICByZXN1bHQgPC0gIm1lZGl1bSINCn1lbHNlew0KcmVzdWx0IDwtICJsYXJnZSINCn0NCg0KcHJpbnQocmVzdWx0KQ0KDQpgYGANCg0KDQo=</div>
 
 
 
@@ -328,7 +385,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("Sesion2.Rmd");
+  window.initializeSourceEmbed("sesion3.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
