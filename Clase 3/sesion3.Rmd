@@ -116,4 +116,110 @@ print(result)
 
 ```
 
+Loops
+
+```{r}
+
+spped <- 64
+
+while (spped > 30){
+  print(paste("your spped is", spped))
+  
+  if(spped >= 48){
+    print(paste("Slow down big time"))
+    spped <- spped - 11
+  }
+  else{
+    print(paste("Slow down big time"))
+    spped <- spped - 6
+  }
+}
+
+spped
+
+```
+Break
+
+```{r}
+
+speed <- 88
+
+while (speed > 30){
+  print(paste("your spped is", speed))
+  
+  if(speed > 80){
+    break
+  }
+  
+  if(speed > 48){
+    print(paste("slow down big time", speed))
+    speed <- speed - 11
+  }
+  
+  else{
+    print(paste("slow down", speed))
+    speed <- speed - 6
+  }
+  
+}
+
+```
+
+For
+
+```{r}
+linkedin <- c(16,9,13,5,2,17,14)
+
+for(l in linkedin){
+  print(l)
+}
+
+#Recorrer una lista
+
+for (i in 1:length(linkedin)){
+  print(linkedin[i])
+}
+
+```
+Loop over a list
+
+Recorrer una lista
+
+
+```{r}
+nyc <- list(pop=849320, boroughs=c("manhattan","bronx", "brooklyn","Queens","staten island"), capital =FALSE)
+
+for (n in nyc){
+  print(n)
+}
+
+for(i in 1:length(nyc)){
+  if(i==2){
+    for(j in 1:length(nyc[[i]])){
+      print(nyc[[i]][j])
+    }
+  }
+  else{
+    print(nyc[[i]])
+  }
+}
+
+
+```
+loop over a matrix
+recorrer una matriz
+
+```{r}
+
+views <- matrix(c(linkedin,facebook), nrow=2, byrow=TRUE)
+views
+
+for (row in 1:nrow(views)){
+  for(col in 1:ncol(views)){
+    print(paste("on row", row, "and column", col, "contanins", views[row,col]))
+  }
+}
+
+```
+
 

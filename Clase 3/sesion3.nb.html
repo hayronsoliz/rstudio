@@ -336,9 +336,124 @@ print(result)
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Loops</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zcHBlZCA8LSA2NFxuXG53aGlsZSAoc3BwZWQgPiAzMCl7XG4gIHByaW50KHBhc3RlKFwieW91ciBzcHBlZCBpc1wiLCBzcHBlZCkpXG4gIFxuICBpZihzcHBlZCA+PSA0OCl7XG4gICAgcHJpbnQocGFzdGUoXCJTbG93IGRvd24gYmlnIHRpbWVcIikpXG4gICAgc3BwZWQgPC0gc3BwZWQgLSAxMVxuICB9XG4gIGVsc2V7XG4gICAgcHJpbnQocGFzdGUoXCJTbG93IGRvd24gYmlnIHRpbWVcIikpXG4gICAgc3BwZWQgPC0gc3BwZWQgLSA2XG4gIH1cbn1cblxuc3BwZWRcblxuYGBgIn0= -->
+<pre class="r"><code>
+spped &lt;- 64
+
+while (spped &gt; 30){
+  print(paste(&quot;your spped is&quot;, spped))
+  
+  if(spped &gt;= 48){
+    print(paste(&quot;Slow down big time&quot;))
+    spped &lt;- spped - 11
+  }
+  else{
+    print(paste(&quot;Slow down big time&quot;))
+    spped &lt;- spped - 6
+  }
+}
+
+spped
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Break</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zcGVlZCA8LSA4OFxuXG53aGlsZSAoc3BlZWQgPiAzMCl7XG4gIHByaW50KHBhc3RlKFwieW91ciBzcHBlZCBpc1wiLCBzcGVlZCkpXG4gIFxuICBpZihzcGVlZCA+IDgwKXtcbiAgICBicmVha1xuICB9XG4gIFxuICBpZihzcGVlZCA+IDQ4KXtcbiAgICBwcmludChwYXN0ZShcInNsb3cgZG93biBiaWcgdGltZVwiLCBzcGVlZCkpXG4gICAgc3BlZWQgPC0gc3BlZWQgLSAxMVxuICB9XG4gIFxuICBlbHNle1xuICAgIHByaW50KHBhc3RlKFwic2xvdyBkb3duXCIsIHNwZWVkKSlcbiAgICBzcGVlZCA8LSBzcGVlZCAtIDZcbiAgfVxuICBcbn1cblxuYGBgIn0= -->
+<pre class="r"><code>
+speed &lt;- 88
+
+while (speed &gt; 30){
+  print(paste(&quot;your spped is&quot;, speed))
+  
+  if(speed &gt; 80){
+    break
+  }
+  
+  if(speed &gt; 48){
+    print(paste(&quot;slow down big time&quot;, speed))
+    speed &lt;- speed - 11
+  }
+  
+  else{
+    print(paste(&quot;slow down&quot;, speed))
+    speed &lt;- speed - 6
+  }
+  
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>For</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlua2VkaW4gPC0gYygxNiw5LDEzLDUsMiwxNywxNClcblxuZm9yKGwgaW4gbGlua2VkaW4pe1xuICBwcmludChsKVxufVxuXG4jUmVjb3JyZXIgdW5hIGxpc3RhXG5cbmZvciAoaSBpbiAxOmxlbmd0aChsaW5rZWRpbikpe1xuICBwcmludChsaW5rZWRpbltpXSlcbn1cblxuYGBgIn0= -->
+<pre class="r"><code>linkedin &lt;- c(16,9,13,5,2,17,14)
+
+for(l in linkedin){
+  print(l)
+}
+
+#Recorrer una lista
+
+for (i in 1:length(linkedin)){
+  print(linkedin[i])
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Loop over a list</p>
+<p>Recorrer una lista</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnljIDwtIGxpc3QocG9wPTg0OTMyMCwgYm9yb3VnaHM9YyhcIm1hbmhhdHRhblwiLFwiYnJvbnhcIiwgXCJicm9va2x5blwiLFwiUXVlZW5zXCIsXCJzdGF0ZW4gaXNsYW5kXCIpLCBjYXBpdGFsID1GQUxTRSlcblxuZm9yIChuIGluIG55Yyl7XG4gIHByaW50KG4pXG59XG5cbmZvcihpIGluIDE6bGVuZ3RoKG55Yykpe1xuICBpZihpPT0yKXtcbiAgICBmb3IoaiBpbiAxOmxlbmd0aChueWNbW2ldXSkpe1xuICAgICAgcHJpbnQobnljW1tpXV1bal0pXG4gICAgfVxuICB9XG4gIGVsc2V7XG4gICAgcHJpbnQobnljW1tpXV0pXG4gIH1cbn1cblxuXG5gYGAifQ== -->
+<pre class="r"><code>nyc &lt;- list(pop=849320, boroughs=c(&quot;manhattan&quot;,&quot;bronx&quot;, &quot;brooklyn&quot;,&quot;Queens&quot;,&quot;staten island&quot;), capital =FALSE)
+
+for (n in nyc){
+  print(n)
+}
+
+for(i in 1:length(nyc)){
+  if(i==2){
+    for(j in 1:length(nyc[[i]])){
+      print(nyc[[i]][j])
+    }
+  }
+  else{
+    print(nyc[[i]])
+  }
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>loop over a matrix recorrer una matriz</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG52aWV3cyA8LSBtYXRyaXgoYyhsaW5rZWRpbixmYWNlYm9vayksIG5yb3c9MiwgYnlyb3c9VFJVRSlcbnZpZXdzXG5cbmZvciAocm93IGluIDE6bnJvdyh2aWV3cykpe1xuICBmb3IoY29sIGluIDE6bmNvbCh2aWV3cykpe1xuICAgIHByaW50KHBhc3RlKFwib24gcm93XCIsIHJvdywgXCJhbmQgY29sdW1uXCIsIGNvbCwgXCJjb250YW5pbnNcIiwgdmlld3Nbcm93LGNvbF0pKVxuICB9XG59XG5cbmBgYCJ9 -->
+<pre class="r"><code>
+views &lt;- matrix(c(linkedin,facebook), nrow=2, byrow=TRUE)
+views
+
+for (row in 1:nrow(views)){
+  for(col in 1:ncol(views)){
+    print(paste(&quot;on row&quot;, row, &quot;and column&quot;, col, &quot;contanins&quot;, views[row,col]))
+  }
+}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpSIElOVEVSTUVESUFURQ0KDQpgYGB7cn0NCjMgPT0gKDIgKyAxKQ0KImludGVybWVkaWF0ZSIgIT0gInIiDQpUUlVFICE9IEZBTFNFDQoiUmNoaXRlY3QiICE9ICJyY2hpdGVjdCINCg0KYGBgDQoNCmdyZWF0ZXIgYW5kIGxlc3MgdGhhbg0KDQoNCmBgYHtyfQ0KLTYgKiA1ICsgMiA+PSAtMTAgKyAxDQoNCiJyYWluaW5nIiA8PSAidGFibGUiDQoNClRSVUUgPiBGQUxTRQ0KDQoiQCIgPD0gIj8iDQoNCmBgYA0KQ29tcGFyZSB2ZWN0b3JzDQoNCmBgYHtyfQ0KDQpsaW5rZWRpbiA8LSBjKDE2LDksMTMsNSwyLDE3LDE0KQ0KZmFjZWJvb2sgPC0gYygxNyw3LDUsMTYsOCwxMywxNCkNCg0KbGlua2VkaW4gPiAxNQ0KZmFjZWJvb2sgPiAxNQ0KDQpsaW5rZWRpbiA+IGZhY2Vib29rDQoNCnZpZXdzIDwtIG1hdHJpeCAoYyhsaW5rZWRpbiwgZmFjZWJvb2spLCBucm93PTIgLCBieXJvdz1UUlVFKQ0Kdmlld3MNCg0Kdmlld3MgPT0gMTMNCg0KDQpgYGANCk9wZXJhY2lvbmVzIGzDs2dpY2FzDQoNCmBgYHtyfQ0KDQpsaW5rZWRpbiA8PSAxMCAmIGZhY2Vib29rID09IDEzDQp2aWV3cyA+IDExICYgdmlld3MgPDUNCg0KYGBgDQoNCnRoZSBpZiBzdGF0ZW1lbnQNCg0KYGBge3J9DQptZWRpdW0gPC0gImZhY2Vib29rIg0KbnVtX3ZpZXdzIDwtIDE0DQoNCmlmKG1lZGl1bSA9PSAibGlua2VkaW4iKXsNCiAgcHJpbnQgKCJTaG93aW5nIExJbmtlZGluIGluZm9ybWF0aW9uIikgIA0KfSBlbHNlIHsNCiAgcHJpbnQgKCJ1bmtub3cgbWVkaXVtIikNCn0NCg0KaWYobnVtX3ZpZXdzID4gMTUpew0KICBwcmludCgieW91IGFyZSBwb3B1bGFyIikNCn1lbHNlIHsNCiAgcHJpbnQgKCJUcnkgdG8gYmUgbW9yZSB2aXNpYmxlISIpDQp9DQoNCg0KDQpgYGANCg0KDQpjdXN0b21pemUgZnVydGhlcjogZWxzZSBpZg0KDQoNCmBgYHtyfQ0KDQppZihtZWRpdW0gPT0ibGlua2VkaW4iKXsNCiAgcHJpbnQoIlNob3dpbmcgTGlua2VkaW4gaW5mb3JtYXRpb24iKQ0KfSBlbHNlIGlmKG1lZGl1bSA9PSAiZmFjZWJvb2siKXsNCiAgcHJpbnQoIlNob3dpbmcgZmFjZWJvb2sgaW5mb3JtYXRpb24iKQ0KfSBlbHNlew0KICAgcHJpbnQgKCJUcnkgdG8gYmUgbW9yZSB2aXNpYmxlISIpDQp9DQoNCg0KDQpgYGANCg0KZWxzZSBpZiAyLjANCg0KYGBge3J9DQpudW1iZXIgPC0gMTENCg0KDQppZihudW1iZXIgPCAxMCl7DQogIGlmKG51bWJlciA8IDUpew0KICAgIHJlc3VsdCA8LSAiZXh0cmEgc21hbGwiDQogIH1lbHNlew0KICAgIHJlc3VsdCA8LSAic21hbGwiDQogIH0NCn1lbHNlIGlmIChudW1iZXIgPCAxMDApew0KICByZXN1bHQgPC0gIm1lZGl1bSINCn1lbHNlew0KcmVzdWx0IDwtICJsYXJnZSINCn0NCg0KcHJpbnQocmVzdWx0KQ0KDQpgYGANCg0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpSIElOVEVSTUVESUFURQ0KDQpgYGB7cn0NCjMgPT0gKDIgKyAxKQ0KImludGVybWVkaWF0ZSIgIT0gInIiDQpUUlVFICE9IEZBTFNFDQoiUmNoaXRlY3QiICE9ICJyY2hpdGVjdCINCg0KYGBgDQoNCmdyZWF0ZXIgYW5kIGxlc3MgdGhhbg0KDQoNCmBgYHtyfQ0KLTYgKiA1ICsgMiA+PSAtMTAgKyAxDQoNCiJyYWluaW5nIiA8PSAidGFibGUiDQoNClRSVUUgPiBGQUxTRQ0KDQoiQCIgPD0gIj8iDQoNCmBgYA0KQ29tcGFyZSB2ZWN0b3JzDQoNCmBgYHtyfQ0KDQpsaW5rZWRpbiA8LSBjKDE2LDksMTMsNSwyLDE3LDE0KQ0KZmFjZWJvb2sgPC0gYygxNyw3LDUsMTYsOCwxMywxNCkNCg0KbGlua2VkaW4gPiAxNQ0KZmFjZWJvb2sgPiAxNQ0KDQpsaW5rZWRpbiA+IGZhY2Vib29rDQoNCnZpZXdzIDwtIG1hdHJpeCAoYyhsaW5rZWRpbiwgZmFjZWJvb2spLCBucm93PTIgLCBieXJvdz1UUlVFKQ0Kdmlld3MNCg0Kdmlld3MgPT0gMTMNCg0KDQpgYGANCk9wZXJhY2lvbmVzIGzDs2dpY2FzDQoNCmBgYHtyfQ0KDQpsaW5rZWRpbiA8PSAxMCAmIGZhY2Vib29rID09IDEzDQp2aWV3cyA+IDExICYgdmlld3MgPDUNCg0KYGBgDQoNCnRoZSBpZiBzdGF0ZW1lbnQNCg0KYGBge3J9DQptZWRpdW0gPC0gImZhY2Vib29rIg0KbnVtX3ZpZXdzIDwtIDE0DQoNCmlmKG1lZGl1bSA9PSAibGlua2VkaW4iKXsNCiAgcHJpbnQgKCJTaG93aW5nIExJbmtlZGluIGluZm9ybWF0aW9uIikgIA0KfSBlbHNlIHsNCiAgcHJpbnQgKCJ1bmtub3cgbWVkaXVtIikNCn0NCg0KaWYobnVtX3ZpZXdzID4gMTUpew0KICBwcmludCgieW91IGFyZSBwb3B1bGFyIikNCn1lbHNlIHsNCiAgcHJpbnQgKCJUcnkgdG8gYmUgbW9yZSB2aXNpYmxlISIpDQp9DQoNCg0KDQpgYGANCg0KDQpjdXN0b21pemUgZnVydGhlcjogZWxzZSBpZg0KDQoNCmBgYHtyfQ0KDQppZihtZWRpdW0gPT0ibGlua2VkaW4iKXsNCiAgcHJpbnQoIlNob3dpbmcgTGlua2VkaW4gaW5mb3JtYXRpb24iKQ0KfSBlbHNlIGlmKG1lZGl1bSA9PSAiZmFjZWJvb2siKXsNCiAgcHJpbnQoIlNob3dpbmcgZmFjZWJvb2sgaW5mb3JtYXRpb24iKQ0KfSBlbHNlew0KICAgcHJpbnQgKCJUcnkgdG8gYmUgbW9yZSB2aXNpYmxlISIpDQp9DQoNCg0KDQpgYGANCg0KZWxzZSBpZiAyLjANCg0KYGBge3J9DQpudW1iZXIgPC0gMTENCg0KDQppZihudW1iZXIgPCAxMCl7DQogIGlmKG51bWJlciA8IDUpew0KICAgIHJlc3VsdCA8LSAiZXh0cmEgc21hbGwiDQogIH1lbHNlew0KICAgIHJlc3VsdCA8LSAic21hbGwiDQogIH0NCn1lbHNlIGlmIChudW1iZXIgPCAxMDApew0KICByZXN1bHQgPC0gIm1lZGl1bSINCn1lbHNlew0KcmVzdWx0IDwtICJsYXJnZSINCn0NCg0KcHJpbnQocmVzdWx0KQ0KDQpgYGANCg0KTG9vcHMNCg0KYGBge3J9DQoNCnNwcGVkIDwtIDY0DQoNCndoaWxlIChzcHBlZCA+IDMwKXsNCiAgcHJpbnQocGFzdGUoInlvdXIgc3BwZWQgaXMiLCBzcHBlZCkpDQogIA0KICBpZihzcHBlZCA+PSA0OCl7DQogICAgcHJpbnQocGFzdGUoIlNsb3cgZG93biBiaWcgdGltZSIpKQ0KICAgIHNwcGVkIDwtIHNwcGVkIC0gMTENCiAgfQ0KICBlbHNlew0KICAgIHByaW50KHBhc3RlKCJTbG93IGRvd24gYmlnIHRpbWUiKSkNCiAgICBzcHBlZCA8LSBzcHBlZCAtIDYNCiAgfQ0KfQ0KDQpzcHBlZA0KDQpgYGANCkJyZWFrDQoNCmBgYHtyfQ0KDQpzcGVlZCA8LSA4OA0KDQp3aGlsZSAoc3BlZWQgPiAzMCl7DQogIHByaW50KHBhc3RlKCJ5b3VyIHNwcGVkIGlzIiwgc3BlZWQpKQ0KICANCiAgaWYoc3BlZWQgPiA4MCl7DQogICAgYnJlYWsNCiAgfQ0KICANCiAgaWYoc3BlZWQgPiA0OCl7DQogICAgcHJpbnQocGFzdGUoInNsb3cgZG93biBiaWcgdGltZSIsIHNwZWVkKSkNCiAgICBzcGVlZCA8LSBzcGVlZCAtIDExDQogIH0NCiAgDQogIGVsc2V7DQogICAgcHJpbnQocGFzdGUoInNsb3cgZG93biIsIHNwZWVkKSkNCiAgICBzcGVlZCA8LSBzcGVlZCAtIDYNCiAgfQ0KICANCn0NCg0KYGBgDQoNCkZvcg0KDQpgYGB7cn0NCmxpbmtlZGluIDwtIGMoMTYsOSwxMyw1LDIsMTcsMTQpDQoNCmZvcihsIGluIGxpbmtlZGluKXsNCiAgcHJpbnQobCkNCn0NCg0KI1JlY29ycmVyIHVuYSBsaXN0YQ0KDQpmb3IgKGkgaW4gMTpsZW5ndGgobGlua2VkaW4pKXsNCiAgcHJpbnQobGlua2VkaW5baV0pDQp9DQoNCmBgYA0KTG9vcCBvdmVyIGEgbGlzdA0KDQpSZWNvcnJlciB1bmEgbGlzdGENCg0KDQpgYGB7cn0NCm55YyA8LSBsaXN0KHBvcD04NDkzMjAsIGJvcm91Z2hzPWMoIm1hbmhhdHRhbiIsImJyb254IiwgImJyb29rbHluIiwiUXVlZW5zIiwic3RhdGVuIGlzbGFuZCIpLCBjYXBpdGFsID1GQUxTRSkNCg0KZm9yIChuIGluIG55Yyl7DQogIHByaW50KG4pDQp9DQoNCmZvcihpIGluIDE6bGVuZ3RoKG55Yykpew0KICBpZihpPT0yKXsNCiAgICBmb3IoaiBpbiAxOmxlbmd0aChueWNbW2ldXSkpew0KICAgICAgcHJpbnQobnljW1tpXV1bal0pDQogICAgfQ0KICB9DQogIGVsc2V7DQogICAgcHJpbnQobnljW1tpXV0pDQogIH0NCn0NCg0KDQpgYGANCmxvb3Agb3ZlciBhIG1hdHJpeA0KcmVjb3JyZXIgdW5hIG1hdHJpeg0KDQpgYGB7cn0NCg0Kdmlld3MgPC0gbWF0cml4KGMobGlua2VkaW4sZmFjZWJvb2spLCBucm93PTIsIGJ5cm93PVRSVUUpDQp2aWV3cw0KDQpmb3IgKHJvdyBpbiAxOm5yb3codmlld3MpKXsNCiAgZm9yKGNvbCBpbiAxOm5jb2wodmlld3MpKXsNCiAgICBwcmludChwYXN0ZSgib24gcm93Iiwgcm93LCAiYW5kIGNvbHVtbiIsIGNvbCwgImNvbnRhbmlucyIsIHZpZXdzW3Jvdyxjb2xdKSkNCiAgfQ0KfQ0KDQpgYGANCg0KDQo=</div>
 
 
 
