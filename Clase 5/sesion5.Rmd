@@ -12,6 +12,7 @@ library(gapminder)
 library(dplyr)
 
 gapminder
+mtcars
 
 ```
 
@@ -91,6 +92,10 @@ ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent)) +
   geom_point() +
   scale_x_log10() +
   scale_y_log10()
+
+
+
+
 
 ```
 
