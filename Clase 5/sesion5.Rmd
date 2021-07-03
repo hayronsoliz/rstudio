@@ -1,0 +1,100 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Introduction to the Tydyverse
+
+```{r}
+#instalar librerias
+
+library(gapminder)
+library(dplyr)
+
+gapminder
+
+```
+
+Filtrar datos
+
+```{r}
+
+gapminder %>% 
+  filter (year==1957)
+
+```
+
+Filtering   and arranging
+
+```{r}
+
+gapminder %>% 
+  filter (year==1957) %>%
+  arrange(desc(pop))
+
+```
+
+the verb mutate
+
+```{r}
+gapminder  %>% 
+  mutate (lifeExp = 23 * lifeExp)
+
+```
+
+combing filter, mutate and arange
+
+```{r}
+
+gapminder %>% 
+  filter (year==2000) %>%
+  mutate(lifeExpMonths = 12 *lifeExp) %>%
+  arrange(desc(lifeExpMonths))
+
+```
+
+Instalar libreria ggplot2
+
+```{r}
+library(ggplot2)
+
+gapminder_1952 <- gapminder %>% #guardar filtrado en una variable
+  filter (year==1952)
+
+gapminder_1952
+
+```
+
+Usar ggplot para graficar
+
+```{r}
+
+ggplot(gapminder_1952, aes(x=pop, y=gdpPercap)) + 
+  geom_point()
+
+```
+Escala logaritmica
+
+```{r}
+
+ggplot(gapminder_1952, aes(x=pop, y=gdpPercap)) + 
+  geom_point() +
+  scale_x_log10() +
+  scale_y_log10()
+
+```
+Colores
+
+```{r}
+
+ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent)) + 
+  geom_point() +
+  scale_x_log10() +
+  scale_y_log10()
+
+```
+
+
+
+
+
