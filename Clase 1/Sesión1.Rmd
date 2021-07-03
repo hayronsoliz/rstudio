@@ -21,6 +21,7 @@ titles <- c("A new hope", "the empire strikers", "return of jedi")
 
 colnames (star_wars_matrix) <- region
 rownames(star_wars_matrix) <- titles
+
 star_wars_matrix
 ```
 RowSums()
