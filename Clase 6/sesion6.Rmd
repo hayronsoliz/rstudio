@@ -1,0 +1,175 @@
+---
+title: "R Notebook"
+output: 
+  html_notebook: 
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+cargar libreria
+
+```{r}
+
+library(tidyverse)
+
+```
+
+Grouping and summarizing
+
+Summarize: toma una variable y a esa variable le agregara la media del valor
+
+```{r message=TRUE, warning=FALSE}
+
+gapminder %>%
+  summarize(medianLifeExp = median(lifeExp))
+
+
+gapminder %>%
+  filter (year == 1957) %>%
+  summarize(medianLifeExp = median(lifeExp)) #Mediana
+
+gapminder %>%
+  filter (year == 1957) %>%
+  summarize(medianLifeExp = median(lifeExp), max(gdpPercap)) #Mediana y máxima
+
+```
+
+The group_by verb
+
+Agrupamiento por una variable
+
+```{r}
+gapminder %>%
+  group_by(year) %>% #Agrupamiento
+  summarize(medianLifeExp = median(lifeExp), max(gdpPercap)) #Mediana y máxima
+  
+```
+
+Agrupamiento por mas variables
+
+```{r}
+gapminder %>%
+  group_by(continent, year) %>% #Agrupamiento
+  summarize(medianLifeExp = median(lifeExp), max(gdpPercap)) #Mediana y máxima
+```
+
+Almacenar en una variable
+
+```{r}
+by_year <- gapminder %>%
+  group_by(year) %>% #Agrupamiento
+  summarize(medianLifeExp = median(lifeExp), max(gdpPercap)) #Mediana y máxima
+
+ggplot(by_year, aes(x=year, y=medianLifeExp)) +
+  geom_point()
+
+```
+Ejemplo 2 
+
+```{r}
+
+by_year_continent <- gapminder %>%
+  group_by(continent, year) %>% 
+  summarize(medianGdpPercap = median(gdpPercap)) #Mediana
+
+ggplot(by_year_continent, aes(x=year, y=medianGdpPercap, color=continent)) +
+  geom_point()
+
+
+```
+
+Line Plots
+
+Gráfica de lineas
+
+```{r}
+by_year2 <- gapminder %>%
+  group_by(year) %>% #Agrupamiento
+  summarize(medianGpdpercap = median(gdpPercap)) #Mediana y máxima
+
+ggplot(by_year2, aes(x=year, y=medianGpdpercap))+
+  geom_line()
+
+
+```
+
+
+multimes lineas con colores
+
+```{r}
+
+by_year2_continent <- gapminder %>%
+  group_by(year, continent) %>% #Agrupamiento
+  summarize(medianGpdpercap = median(gdpPercap)) #Mediana y máxima
+
+ggplot(by_year2_continent, aes(x=year, y=medianGpdpercap, color=continent))+
+  geom_line()
+
+```
+
+Bar plots
+
+Grafica de barras
+
+```{r}
+oceania_1952 <- gapminder %>%
+  filter(continent == "Oceania", year == 1952)
+
+ggplot(oceania_1952, aes(x=country, y=gdpPercap, fill=country)) +
+  geom_col()
+
+```
+
+
+Histogramas
+
+```{r}
+
+gapminder_1952 <- gapminder %>%
+  filter(year == 1952) %>%
+  mutate(pop_by_mil = pop /1000000) #agregar o reescribir una variable
+  
+ggplot (gapminder_1952, aes(x=pop_by_mil)) +
+  geom_histogram(bins=50) + #bins es la cantidad de rangos
+  scale_x_log10() #Distribución normal con escala
+  
+```
+
+Boxplots
+
+Grafico de cajas
+
+```{r}
+gapminder_1952 <- gapminder %>%
+  filter(year == 1952) 
+
+ggplot(gapminder_1952, aes(x=continent, y=gdpPercap)) +
+  geom_boxplot()+
+  scale_y_log10()
+
+
+```
+
+
+Data manipulation with dplyr
+
+```{r}
+counties <- read_csv('counties.csv')
+counties
+
+```
+
+Manipulación de datos
+
+```{r}
+
+counties %>% 
+  select (state, county, population, men, women) %>%
+  mutate(proportion_men = men/population) %>%
+  filter(population > 1000) %>%
+  arrange(desc(proportion_men))
+
+
+```
+
