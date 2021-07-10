@@ -88,7 +88,7 @@ Colores
 
 ```{r}
 
-ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent)) + 
+ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent, size = gdpPercap)) + 
   geom_point() +
   scale_x_log10() +
   scale_y_log10()
@@ -96,6 +96,38 @@ ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent)) +
 
 
 
+
+```
+Tamaño . Size
+
+```{r}
+
+ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent, size = gdpPercap)) + 
+  geom_point() +
+  scale_x_log10()
+
+```
+
+Faceting
+
+```{r}
+gapminder_1952
+
+ggplot(gapminder_1952, aes(x=pop, y=lifeExp)) + 
+  geom_point() +
+  scale_x_log10() +
+  facet_wrap(~ continent)
+
+```
+
+```{r}
+
+gapminder
+
+ggplot(gapminder, aes(x=gdpPercap, y=lifeExp)) + 
+  geom_point() +
+  scale_x_log10() +
+  facet_wrap(~ year)
 
 ```
 

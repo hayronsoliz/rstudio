@@ -317,9 +317,9 @@ ggplot(gapminder_1952, aes(x=pop, y=gdpPercap)) +
 <p>Colores</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5nZ3Bsb3QoZ2FwbWluZGVyXzE5NTIsIGFlcyh4PXBvcCwgeT1nZHBQZXJjYXAsIGNvbG9yID0gY29udGluZW50KSkgKyBcbiAgZ2VvbV9wb2ludCgpICtcbiAgc2NhbGVfeF9sb2cxMCgpICtcbiAgc2NhbGVfeV9sb2cxMCgpXG5cblxuXG5cblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5nZ3Bsb3QoZ2FwbWluZGVyXzE5NTIsIGFlcyh4PXBvcCwgeT1nZHBQZXJjYXAsIGNvbG9yID0gY29udGluZW50LCBzaXplID0gZ2RwUGVyY2FwKSkgKyBcbiAgZ2VvbV9wb2ludCgpICtcbiAgc2NhbGVfeF9sb2cxMCgpICtcbiAgc2NhbGVfeV9sb2cxMCgpXG5cblxuXG5cblxuYGBgIn0= -->
 <pre class="r"><code>
-ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent)) + 
+ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent, size = gdpPercap)) + 
   geom_point() +
   scale_x_log10() +
   scale_y_log10()
@@ -327,9 +327,49 @@ ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent)) +
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Tamaño . Size</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5nZ3Bsb3QoZ2FwbWluZGVyXzE5NTIsIGFlcyh4PXBvcCwgeT1nZHBQZXJjYXAsIGNvbG9yID0gY29udGluZW50LCBzaXplID0gZ2RwUGVyY2FwKSkgKyBcbiAgZ2VvbV9wb2ludCgpICtcbiAgc2NhbGVfeF9sb2cxMCgpXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+ggplot(gapminder_1952, aes(x=pop, y=gdpPercap, color = continent, size = gdpPercap)) + 
+  geom_point() +
+  scale_x_log10()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Faceting</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ2FwbWluZGVyXzE5NTJcblxuZ2dwbG90KGdhcG1pbmRlcl8xOTUyLCBhZXMoeD1wb3AsIHk9bGlmZUV4cCkpICsgXG4gIGdlb21fcG9pbnQoKSArXG4gIHNjYWxlX3hfbG9nMTAoKSArXG4gIGZhY2V0X3dyYXAofiBjb250aW5lbnQpXG5cbmBgYCJ9 -->
+<pre class="r"><code>gapminder_1952
+
+ggplot(gapminder_1952, aes(x=pop, y=lifeExp)) + 
+  geom_point() +
+  scale_x_log10() +
+  facet_wrap(~ continent)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5nYXBtaW5kZXJcblxuZ2dwbG90KGdhcG1pbmRlciwgYWVzKHg9Z2RwUGVyY2FwLCB5PWxpZmVFeHApKSArIFxuICBnZW9tX3BvaW50KCkgK1xuICBzY2FsZV94X2xvZzEwKCkgK1xuICBmYWNldF93cmFwKH4geWVhcilcblxuYGBgIn0= -->
+<pre class="r"><code>
+gapminder
+
+ggplot(gapminder, aes(x=gdpPercap, y=lifeExp)) + 
+  geom_point() +
+  scale_x_log10() +
+  facet_wrap(~ year)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpJbnRyb2R1Y3Rpb24gdG8gdGhlIFR5ZHl2ZXJzZQ0KDQpgYGB7cn0NCiNpbnN0YWxhciBsaWJyZXJpYXMNCg0KbGlicmFyeShnYXBtaW5kZXIpDQpsaWJyYXJ5KGRwbHlyKQ0KDQpnYXBtaW5kZXINCm10Y2Fycw0KDQpgYGANCg0KRmlsdHJhciBkYXRvcw0KDQpgYGB7cn0NCg0KZ2FwbWluZGVyICU+JSANCiAgZmlsdGVyICh5ZWFyPT0xOTU3KQ0KDQpgYGANCg0KRmlsdGVyaW5nICAgYW5kIGFycmFuZ2luZw0KDQpgYGB7cn0NCg0KZ2FwbWluZGVyICU+JSANCiAgZmlsdGVyICh5ZWFyPT0xOTU3KSAlPiUNCiAgYXJyYW5nZShkZXNjKHBvcCkpDQoNCmBgYA0KDQp0aGUgdmVyYiBtdXRhdGUNCg0KYGBge3J9DQpnYXBtaW5kZXIgICU+JSANCiAgbXV0YXRlIChsaWZlRXhwID0gMjMgKiBsaWZlRXhwKQ0KDQpgYGANCg0KY29tYmluZyBmaWx0ZXIsIG11dGF0ZSBhbmQgYXJhbmdlDQoNCmBgYHtyfQ0KDQpnYXBtaW5kZXIgJT4lIA0KICBmaWx0ZXIgKHllYXI9PTIwMDApICU+JQ0KICBtdXRhdGUobGlmZUV4cE1vbnRocyA9IDEyICpsaWZlRXhwKSAlPiUNCiAgYXJyYW5nZShkZXNjKGxpZmVFeHBNb250aHMpKQ0KDQpgYGANCg0KSW5zdGFsYXIgbGlicmVyaWEgZ2dwbG90Mg0KDQpgYGB7cn0NCmxpYnJhcnkoZ2dwbG90MikNCg0KZ2FwbWluZGVyXzE5NTIgPC0gZ2FwbWluZGVyICU+JSAjZ3VhcmRhciBmaWx0cmFkbyBlbiB1bmEgdmFyaWFibGUNCiAgZmlsdGVyICh5ZWFyPT0xOTUyKQ0KDQpnYXBtaW5kZXJfMTk1Mg0KDQpgYGANCg0KVXNhciBnZ3Bsb3QgcGFyYSBncmFmaWNhcg0KDQpgYGB7cn0NCg0KZ2dwbG90KGdhcG1pbmRlcl8xOTUyLCBhZXMoeD1wb3AsIHk9Z2RwUGVyY2FwKSkgKyANCiAgZ2VvbV9wb2ludCgpDQoNCmBgYA0KRXNjYWxhIGxvZ2FyaXRtaWNhDQoNCmBgYHtyfQ0KDQpnZ3Bsb3QoZ2FwbWluZGVyXzE5NTIsIGFlcyh4PXBvcCwgeT1nZHBQZXJjYXApKSArIA0KICBnZW9tX3BvaW50KCkgKw0KICBzY2FsZV94X2xvZzEwKCkgKw0KICBzY2FsZV95X2xvZzEwKCkNCg0KYGBgDQpDb2xvcmVzDQoNCmBgYHtyfQ0KDQpnZ3Bsb3QoZ2FwbWluZGVyXzE5NTIsIGFlcyh4PXBvcCwgeT1nZHBQZXJjYXAsIGNvbG9yID0gY29udGluZW50KSkgKyANCiAgZ2VvbV9wb2ludCgpICsNCiAgc2NhbGVfeF9sb2cxMCgpICsNCiAgc2NhbGVfeV9sb2cxMCgpDQoNCg0KDQoNCg0KYGBgDQoNCg0KDQoNCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpJbnRyb2R1Y3Rpb24gdG8gdGhlIFR5ZHl2ZXJzZQ0KDQpgYGB7cn0NCiNpbnN0YWxhciBsaWJyZXJpYXMNCg0KbGlicmFyeShnYXBtaW5kZXIpDQpsaWJyYXJ5KGRwbHlyKQ0KDQpnYXBtaW5kZXINCm10Y2Fycw0KDQpgYGANCg0KRmlsdHJhciBkYXRvcw0KDQpgYGB7cn0NCg0KZ2FwbWluZGVyICU+JSANCiAgZmlsdGVyICh5ZWFyPT0xOTU3KQ0KDQpgYGANCg0KRmlsdGVyaW5nICAgYW5kIGFycmFuZ2luZw0KDQpgYGB7cn0NCg0KZ2FwbWluZGVyICU+JSANCiAgZmlsdGVyICh5ZWFyPT0xOTU3KSAlPiUNCiAgYXJyYW5nZShkZXNjKHBvcCkpDQoNCmBgYA0KDQp0aGUgdmVyYiBtdXRhdGUNCg0KYGBge3J9DQpnYXBtaW5kZXIgICU+JSANCiAgbXV0YXRlIChsaWZlRXhwID0gMjMgKiBsaWZlRXhwKQ0KDQpgYGANCg0KY29tYmluZyBmaWx0ZXIsIG11dGF0ZSBhbmQgYXJhbmdlDQoNCmBgYHtyfQ0KDQpnYXBtaW5kZXIgJT4lIA0KICBmaWx0ZXIgKHllYXI9PTIwMDApICU+JQ0KICBtdXRhdGUobGlmZUV4cE1vbnRocyA9IDEyICpsaWZlRXhwKSAlPiUNCiAgYXJyYW5nZShkZXNjKGxpZmVFeHBNb250aHMpKQ0KDQpgYGANCg0KSW5zdGFsYXIgbGlicmVyaWEgZ2dwbG90Mg0KDQpgYGB7cn0NCmxpYnJhcnkoZ2dwbG90MikNCg0KZ2FwbWluZGVyXzE5NTIgPC0gZ2FwbWluZGVyICU+JSAjZ3VhcmRhciBmaWx0cmFkbyBlbiB1bmEgdmFyaWFibGUNCiAgZmlsdGVyICh5ZWFyPT0xOTUyKQ0KDQpnYXBtaW5kZXJfMTk1Mg0KDQpgYGANCg0KVXNhciBnZ3Bsb3QgcGFyYSBncmFmaWNhcg0KDQpgYGB7cn0NCg0KZ2dwbG90KGdhcG1pbmRlcl8xOTUyLCBhZXMoeD1wb3AsIHk9Z2RwUGVyY2FwKSkgKyANCiAgZ2VvbV9wb2ludCgpDQoNCmBgYA0KRXNjYWxhIGxvZ2FyaXRtaWNhDQoNCmBgYHtyfQ0KDQpnZ3Bsb3QoZ2FwbWluZGVyXzE5NTIsIGFlcyh4PXBvcCwgeT1nZHBQZXJjYXApKSArIA0KICBnZW9tX3BvaW50KCkgKw0KICBzY2FsZV94X2xvZzEwKCkgKw0KICBzY2FsZV95X2xvZzEwKCkNCg0KYGBgDQpDb2xvcmVzDQoNCmBgYHtyfQ0KDQpnZ3Bsb3QoZ2FwbWluZGVyXzE5NTIsIGFlcyh4PXBvcCwgeT1nZHBQZXJjYXAsIGNvbG9yID0gY29udGluZW50LCBzaXplID0gZ2RwUGVyY2FwKSkgKyANCiAgZ2VvbV9wb2ludCgpICsNCiAgc2NhbGVfeF9sb2cxMCgpICsNCiAgc2NhbGVfeV9sb2cxMCgpDQoNCg0KDQoNCg0KYGBgDQpUYW1hw7FvIC4gU2l6ZQ0KDQpgYGB7cn0NCg0KZ2dwbG90KGdhcG1pbmRlcl8xOTUyLCBhZXMoeD1wb3AsIHk9Z2RwUGVyY2FwLCBjb2xvciA9IGNvbnRpbmVudCwgc2l6ZSA9IGdkcFBlcmNhcCkpICsgDQogIGdlb21fcG9pbnQoKSArDQogIHNjYWxlX3hfbG9nMTAoKQ0KDQpgYGANCg0KRmFjZXRpbmcNCg0KYGBge3J9DQpnYXBtaW5kZXJfMTk1Mg0KDQpnZ3Bsb3QoZ2FwbWluZGVyXzE5NTIsIGFlcyh4PXBvcCwgeT1saWZlRXhwKSkgKyANCiAgZ2VvbV9wb2ludCgpICsNCiAgc2NhbGVfeF9sb2cxMCgpICsNCiAgZmFjZXRfd3JhcCh+IGNvbnRpbmVudCkNCg0KYGBgDQoNCmBgYHtyfQ0KDQpnYXBtaW5kZXINCg0KZ2dwbG90KGdhcG1pbmRlciwgYWVzKHg9Z2RwUGVyY2FwLCB5PWxpZmVFeHApKSArIA0KICBnZW9tX3BvaW50KCkgKw0KICBzY2FsZV94X2xvZzEwKCkgKw0KICBmYWNldF93cmFwKH4geWVhcikNCg0KYGBgDQoNCg0KDQoNCg0K</div>
 
 
 
