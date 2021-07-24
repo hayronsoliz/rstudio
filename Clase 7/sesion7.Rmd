@@ -1,4 +1,9 @@
 ---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+---
 title: "R Notebook"
 output: html_notebook
 
@@ -86,8 +91,10 @@ Joining Data with dplyr
 
 ```{r}
 #View(sets)
+
 sets
 themes
+
 ```
 
 ```{r}
@@ -96,6 +103,25 @@ sets %>%
 ```
 
 
+Joining parts and part categories
+
+```{r}
+
+view(parts)
+view(parts_categories)
+
+view_parts <- parts %>%
+  inner_join(part_categories, by = c("part_cat_id" = "id")) #INNER JOIN
+
+view_parts
+
+view_parts <- parts %>%
+  inner_join(part_categories, by = c("part_cat_id" = "id"), suffix= c("_parts","_parts_categories")) #Suffix - Agrega un sufijo a cada columna
+
+view_parts
+
+
+```
 
 
 

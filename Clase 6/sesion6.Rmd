@@ -61,6 +61,8 @@ by_year <- gapminder %>%
   group_by(year) %>% #Agrupamiento
   summarize(medianLifeExp = median(lifeExp), max(gdpPercap)) #Mediana y máxima
 
+#Gráfico de dispersión
+
 ggplot(by_year, aes(x=year, y=medianLifeExp)) +
   geom_point()
 
@@ -172,4 +174,118 @@ counties %>%
 
 
 ```
+
+Count verb
+
+```{r}
+library(tidyverse)
+
+counties_selected <- counties %>%
+  select(county, region, state, population, citizens, walk)
+
+counties_selected %>%
+  count(region) #contar por regiones
+
+counties_selected %>%
+  count(region, sort=TRUE) #contar por regiones en forma descendente
+
+counties_selected %>%
+  count(state , wt = citizens) %>% #agrupa por estados, pero suma los elementos de citizens
+  arrange(desc(n))
+
+counties_selected %>%
+  mutate (population_walk = population*walk/100) %>% #Realizamos alguna operación
+  count(state, wt=population_walk, sort= TRUE) #agrupa por estados, suma los resultados de pop, y ordena
+
+```
+
+Summaizing
+
+```{r}
+
+counties_selected <- counties %>%
+  select(county, population, income, unemployment)
+
+counties_selected %>%
+  summarize(min_population=min(population), max_unemployment=max(unemployment), avarange_income=mean(income)) #Minimo, maximo, media
+
+
+##volver a definir counties_selected
+
+counties_selected <- counties %>%
+  select(state, county, population, land_area)
+
+counties_selected %>%
+  group_by(state) %>% #Agrupar por estado
+  summarize(total_area=sum(land_area), total_population=sum(population)) #suma
+  
+counties_selected <- counties %>%
+  select(region, state, county, population)
+
+counties_selected %>%
+  group_by(region, state) %>% #Agrupar por estado y región
+  summarize(total_pop=sum(population)) %>% #suma population
+  ungroup() %>%
+  summarize(avarage_pop=mean(total_pop), median_pop=median(total_pop))
+
+
+```
+
+The top_n verb
+
+Muestra el tpo de datos de una variable
+
+```{r}
+
+counties_selected <- counties %>%
+  select(region, state, county, metro, population, walk)
+
+counties_selected %>%
+  group_by(region) %>%
+  top_n(2, walk) #Por cada region obtiene los 2 más altos
+
+##otro ejemplo mostrando el valor más grande 
+
+counties_selected <- counties %>%
+  select(region, state, county, population, income)
+
+counties_selected %>%
+  group_by(region, state) %>%
+  summarize (avarage_income=mean(income)) %>% #Media de la variable income
+  top_n(1, avarage_income) #agrupando por region y muestra el valor mayor
+
+#Si queremos saber el mayor de todo tenemos que realizar un - ungroup
+
+counties_selected %>%
+  group_by(region, state) %>%
+  summarize (avarage_income=mean(income)) %>% #Media de la variable income
+  ungroup() %>%  #Desagrupa
+  top_n(1, avarage_income) #agrupando por region y muestra el valor mayor pero de todo
+
+```
+
+
+
+```{r}
+
+#Otro ejemplo de ungroup y count
+
+counties_selected <- counties %>%
+  group_by(state, metro, population) 
+
+counties_selected %>%
+  group_by(state, metro) %>% 
+  summarize (total_pop=sum(population)) %>%
+  top_n(1, total_pop)  %>%
+  ungroup() %>%
+  count(metro, wt=total_pop)
+
+
+```
+
+
+
+
+
+
 
